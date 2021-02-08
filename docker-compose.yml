@@ -1,0 +1,22 @@
+version: "3.6"
+
+services:
+  node:
+    restart: unless-stopped
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    env_file: .env
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - node_modules:/home/node/app/node_modules
+      - .:/home/node/app
+
+volumes:
+  node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PROJECT_PATH}/node_modules
