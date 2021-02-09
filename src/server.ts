@@ -1,10 +1,11 @@
 import express, { Application } from "express";
 import { router } from "./entrypoint/routes";
+import { Env } from "./infrastructure/env";
 
 export class Server {
   private app: Application;
 
-  constructor() {
+  constructor(private env: Env) {
     this.app = express();
     this.registerRoutes();
   }
@@ -13,8 +14,12 @@ export class Server {
     this.app.use(router);
   }
 
+  public getApp() {
+    return this.app;
+  }
+
   public listen() {
-    const port = process.env.PORT;
+    const port = this.env.get("PORT");
 
     this.app.listen(port, () => {
       return console.log(`Server is listening on ${port}`);

@@ -7,9 +7,13 @@ Node + Typescript + Express + Docker
 ## ToDo List
 
 [x] Node + Typescript + Express + Docker
+
 [ ] Eslint + Prettier
-[ ] Jest
+
+[X] Testing (Jest)
+
 [ ] Winston (Logs)
+
 [ ] ???
 
 ## Guidelines
@@ -24,5 +28,5 @@ $ cp .env.dev .env
 
 # Run pwd and put the output in the PROJECT_PATH variable
 
-$ docker-compose up --build
+$ make up
 ```
