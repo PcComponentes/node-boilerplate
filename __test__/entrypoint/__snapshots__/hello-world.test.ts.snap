@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hello World API should return 200 when getting hello-world 1`] = `"{\\"text\\":\\"hello world\\"}"`;
