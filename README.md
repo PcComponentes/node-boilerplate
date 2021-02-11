@@ -6,15 +6,11 @@ Node + Typescript + Express + Docker
 
 ## ToDo List
 
-[x] Node + Typescript + Express + Docker
-
-[ ] Eslint + Prettier
-
-[X] Testing (Jest)
-
-[ ] Winston (Logs)
-
-[ ] ???
+- [x] Node + Typescript + Express + Docker
+- [x] Eslint + Prettier
+- [x] Testing (Jest)
+- [ ] Winston (Logs)
+- [ ] ???
 
 ## Guidelines
 

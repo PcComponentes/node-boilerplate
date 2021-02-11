@@ -1,6 +1,6 @@
-import express, { Application } from "express";
-import { router } from "./entrypoint/routes";
-import { Env } from "./infrastructure/env";
+import express, { Application } from 'express';
+import { router } from './entrypoint/routes';
+import { Env } from './infrastructure/env';
 
 export class Server {
   private app: Application;
@@ -19,7 +19,7 @@ export class Server {
   }
 
   public listen() {
-    const port = this.env.get("PORT");
+    const port = this.env.get('PORT');
 
     this.app.listen(port, () => {
       return console.log(`Server is listening on ${port}`);
