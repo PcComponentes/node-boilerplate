@@ -22,7 +22,9 @@ export class Server {
     const port = this.env.get('PORT');
 
     this.app.listen(port, () => {
-      return console.log(`Server is listening on ${port}`);
+      // TODO use winston
+      // eslint-disable-next-line no-console
+      console.log(`Server is listening on ${port}`);
     });
   }
 }
