@@ -1,7 +1,7 @@
 export enum EnvMode {
-  DEV = "DEV",
-  PROD = "PROD",
-  TEST = "TEST",
+  DEV = 'DEV',
+  PROD = 'PROD',
+  TEST = 'TEST',
 }
 
 export interface EnvKey {
@@ -14,7 +14,7 @@ export class Env {
 
   constructor() {
     this.env = {
-      PORT: "",
+      PORT: '',
       MODE: EnvMode.DEV,
     };
 
@@ -30,13 +30,13 @@ export class Env {
       }
     }
 
-    if (Object.keys(EnvMode).indexOf(this.get("MODE")) === -1) {
+    if (Object.keys(EnvMode).indexOf(this.get('MODE')) === -1) {
       throw new Error(`Invalid env MODE value.`);
     }
   }
 
   public get<T extends keyof EnvKey>(key: T): EnvKey[T] {
-    return this.env[key]!;
+    return this.env[key];
   }
 
   public set<T extends keyof EnvKey>(key: T, value: EnvKey[T]) {
