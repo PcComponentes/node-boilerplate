@@ -1,11 +1,5 @@
 import { Query } from '../../../../infrastructure/messageBus/query.bus.interface';
-
-interface Pagination {
-  page: number;
-  limit: number;
-}
-
-type FindAllSampleQueryInterface = Pagination;
+import { FindAllSampleQueryInterface } from './findAllSample.interfaces';
 
 export class FindAllSampleQuery extends Query<FindAllSampleQueryInterface> {
   protected readonly NAME = 'find_all_sample_query';

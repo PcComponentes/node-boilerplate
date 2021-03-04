@@ -1,8 +1,5 @@
 import { Query } from '../../../../infrastructure/messageBus/query.bus.interface';
-
-interface FindBySampleQueryInterface {
-  uuid: string;
-}
+import { FindBySampleQueryInterface } from './findBySample.interfaces';
 
 export class FindBySampleQuery extends Query<FindBySampleQueryInterface> {
   protected readonly NAME = 'find_by_sample_query';

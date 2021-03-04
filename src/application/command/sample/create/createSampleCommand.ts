@@ -1,9 +1,5 @@
 import { Command } from '../../../../infrastructure/messageBus/command.bus.interface';
-
-export interface CreateSampleCommandInterface {
-  uuid: string;
-  task: string;
-}
+import { CreateSampleCommandInterface } from './createSample.interfaces';
 
 export class CreateSampleCommand extends Command<CreateSampleCommandInterface> {
   protected readonly NAME = 'create_sample_command';
