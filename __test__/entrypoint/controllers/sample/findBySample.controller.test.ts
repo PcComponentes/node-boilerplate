@@ -18,7 +18,7 @@ describe('FindBySampleControllerTest', () => {
   });
 
   it('should return 200', async (done) => {
-    const res = await supertest(app).get('/api/sample/75d6573e-d323-4814-af60-984dc886ffa7').send();
+    const res = await supertest(app).get('/v1/sample/75d6573e-d323-4814-af60-984dc886ffa7').send();
 
     expect(res.status).toBe(200);
     expect(res.body).toBeDefined();

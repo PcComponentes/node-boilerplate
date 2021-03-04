@@ -18,7 +18,7 @@ describe('FindAllSampleControllerTest', () => {
   });
 
   it('should return 200', async (done) => {
-    const res = await supertest(app).get('/api/sample').send();
+    const res = await supertest(app).get('/v1/sample').send();
 
     expect(res.status).toBe(200);
 

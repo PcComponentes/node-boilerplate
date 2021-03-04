@@ -18,7 +18,7 @@ describe('CreateSampleControllerTest', () => {
   });
 
   it('should return 201', async (done) => {
-    const res = await supertest(app).post('/api/sample').send();
+    const res = await supertest(app).post('/v1/sample').send();
 
     expect(res.status).toBe(201);
     expect(res.body).toMatchObject({});

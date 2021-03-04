@@ -4,11 +4,11 @@ import { FindAllSampleController } from './findAllSample.controller';
 import { FindBySampleController } from './findBySample.controller';
 
 export const routes: Route = {
-  '/api/sample': {
+  '/v1/sample': {
     get: FindAllSampleController,
     post: CreateSampleController,
   },
-  '/api/sample/:uuid': {
+  '/v1/sample/:uuid': {
     get: FindBySampleController,
   },
 };
