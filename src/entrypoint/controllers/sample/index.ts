@@ -1,14 +1,14 @@
-import { RouteInterface } from '../../routes';
+import { Route } from '../../routes.interfaces';
 import { CreateSampleController } from './createSample.controller';
 import { FindAllSampleController } from './findAllSample.controller';
 import { FindBySampleController } from './findBySample.controller';
 
-export const routes: RouteInterface = {
+export const routes: Route = {
   '/api/sample': {
-    get: new FindAllSampleController(),
-    post: new CreateSampleController(),
+    get: FindAllSampleController,
+    post: CreateSampleController,
   },
   '/api/sample/:uuid': {
-    get: new FindBySampleController(),
+    get: FindBySampleController,
   },
 };
