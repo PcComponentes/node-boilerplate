@@ -3,7 +3,7 @@ import { FindAllSampleQuery } from '../../../application/query/sample/findAll/fi
 import { FindAllSampleQueryHandler } from '../../../application/query/sample/findAll/findAllSampleQueryHandler';
 import { SampleSearcher } from '../../../domain/service/sample/sampleSearcher';
 import { InMemorySampleRepository } from '../../../infrastructure/repository/sample/inMemorySampleRepository';
-import { QueryController } from '../quey.controller';
+import { QueryController } from '../query.controller';
 
 export class FindAllSampleController extends QueryController {
   public invoke(req: Request, res: Response): void {

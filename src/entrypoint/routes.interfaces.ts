@@ -1,5 +1,5 @@
 import { CommandController } from './controllers/command.controller';
-import { QueryController } from './controllers/quey.controller';
+import { QueryController } from './controllers/query.controller';
 
 export type Controller = typeof QueryController | typeof CommandController;
 export type Method = 'get' | 'post' | 'put' | 'delete' | 'patch';

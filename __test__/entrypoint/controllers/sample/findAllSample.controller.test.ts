@@ -3,8 +3,6 @@ import supertest from 'supertest';
 import { Env } from '../../../../src/infrastructure/env';
 import { Server } from '../../../../src/server';
 
-// jest.mock('../../../../src/infrastructure/middlewares/registryMessage');
-
 describe('FindAllSampleControllerTest', () => {
   let server: Server;
   let app: Application;

@@ -3,7 +3,7 @@ import { FindBySampleQuery } from '../../../application/query/sample/findBy/find
 import { FindBySampleQueryHandler } from '../../../application/query/sample/findBy/findBySampleQueryHandler';
 import { SampleFinder } from '../../../domain/service/sample/sampleFinder';
 import { InMemorySampleRepository } from '../../../infrastructure/repository/sample/inMemorySampleRepository';
-import { QueryController } from '../quey.controller';
+import { QueryController } from '../query.controller';
 
 export class FindBySampleController extends QueryController {
   public invoke(req: Request, res: Response): void {
