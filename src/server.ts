@@ -1,3 +1,4 @@
+import bodyParser from 'body-parser';
 import express, { Application } from 'express';
 import { router } from './entrypoint/routes';
 import { Env } from './infrastructure/env';
@@ -7,7 +8,13 @@ export class Server {
 
   constructor(private env: Env) {
     this.app = express();
+    this.settings();
     this.registerRoutes();
+  }
+
+  private settings() {
+    this.app.use(bodyParser.urlencoded({ extended: false }));
+    this.app.use(bodyParser.json());
   }
 
   private registerRoutes() {

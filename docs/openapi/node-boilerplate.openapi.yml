@@ -1,0 +1,94 @@
+openapi: "3.0.0"
+info:
+  version: 0.0.1
+  title: Openapi sample
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /v1/sample:
+    post:
+      summary: Create a sample
+      operationId: sampleCreator
+      tags:
+        - Sample
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - uuid
+                - task
+              properties:
+                uuid:
+                  type: string
+                  format: uuid
+                  description: Uuid
+                task:
+                  type: string
+                  description: Task
+      responses:
+        '200':
+          description: Sample was created
+    get:
+      summary: Get a list of samples
+      operationId: sampleSearcher
+      tags:
+        - Sample
+      parameters:
+        - name: page
+          in: query
+          description: Page
+          schema:
+            type: number
+        - name: limit
+          in: query
+          description: Limit
+          schema:
+            type: number
+      responses:
+        '200':
+          description: List of samples
+          content:
+            application/json:
+              schema:
+                type: 'array'
+                items:
+                  $ref: '#/components/schemas/Sample'
+
+  /v1/sample/{uuid}:
+    get:
+      summary: Get sample data
+      operationId: sampleGetter
+      tags:
+        - Sample
+      parameters:
+        - name: uuid
+          in: path
+          description: Uuid sample
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Data of sample by uuid
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Sample"
+components:
+  schemas:
+    Sample:
+      required:
+        - uuid
+        - task
+      properties:
+        uuid:
+          type: string
+          format: uuid
+          description: Sample uuid
+        task:
+          type: string
+          description: Sample task

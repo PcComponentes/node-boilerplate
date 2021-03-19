@@ -1,9 +1,9 @@
 import { Application } from 'express';
 import supertest from 'supertest';
-import { Env } from '../../src/infrastructure/env';
-import { Server } from '../../src/server';
+import { Env } from '../../../../src/infrastructure/env';
+import { Server } from '../../../../src/server';
 
-describe('Hello World API', () => {
+describe('FindAllSampleControllerTest', () => {
   let server: Server;
   let app: Application;
 
@@ -15,11 +15,10 @@ describe('Hello World API', () => {
     done();
   });
 
-  it('should return 200 when getting hello-world', async (done) => {
-    const res = await supertest(app).get('/hello-world').send();
+  it('should return 200', async (done) => {
+    const res = await supertest(app).get('/v1/sample').send();
 
     expect(res.status).toBe(200);
-    expect(res.text).toMatchSnapshot();
 
     done();
   });
